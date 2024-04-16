@@ -1,16 +1,14 @@
-class WeatherSerializer:
-    def __init__(self, data, many=False) -> None:
-        if many:
-            weathers = []
-            for weather in data:
-                weathers.append(weather)
-            self.data = weathers
-        else:
-            self.data = {
-                "temperature": data.temperature,
-                "city": data.city,
-                "atmosphericPressure": data.atmosphericPressure,
-                "humidity": data.humidity,
-                "weather": data.weather,
-                "date": data.date.strftime("%Y-%m-%d %H:%M:%S"),
-            }
+from rest_framework import serializers
+from .models import WeatherEntity
+
+class WeatherSerializer(serializers.Serializer):
+    id = serializers.CharField(allow_blank=True, required=False)
+    temperature = serializers.FloatField()
+    date = serializers.DateTimeField()
+    city = serializers.CharField(max_length=255, allow_blank=True)
+    atmosphericPressure = serializers.FloatField(required=False)
+    humidity = serializers.FloatField(required=False)
+    weather = serializers.CharField(max_length=255, allow_blank=True)
+
+    def create(self, validated_data):
+        return WeatherEntity(**validated_data)
