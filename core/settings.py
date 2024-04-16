@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x*(q3p^1)e-&sa@q89judj%=or7f8bht7xr)!qh5ppi*d*345j'
+SECRET_KEY = 'django-insecure-_k)s*zd+u6pa#mm^@j-t&vg1n(*u_wjskqgxyc0vgeohl2-7_0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 # MONGO_CONNECTION_STRING = "mongodb+srv://ads_user:<password>@clusterads.xmrbktn.mongodb.net/?retryWrites=true&w=majority&appName=ClusterADS"
 MONGO_CONNECTION_STRING = 'mongodb://10.109.2.63:443/'
-MONGO_DATABASE_NAME = 'weather_andresouza'
+MONGO_DATABASE_NAME = 'weather_paje'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators

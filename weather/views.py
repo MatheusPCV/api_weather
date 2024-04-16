@@ -1,4 +1,3 @@
-from bible_verse import main
 from datetime import datetime
 from random import randrange
 from django.views import View
@@ -11,7 +10,7 @@ from .exceptions import WeatherException
 
 class WeatherView(View):
     def get(self, request):
-        verse = main.get_bible_verse_en()
+        verse = "RECEBA!"
         repository = WeatherRepository(collectionName='weathers')
         try:
             weathers = list(repository.getAll())
@@ -114,7 +113,7 @@ class WeatherFilter(View):
         data = request.POST.dict()
         data.pop('csrfmiddlewaretoken')
 
-        verse = main.get_bible_verse_en()
+        verse = "RECEBA!"
         repository = WeatherRepository(collectionName='weathers')
         try:
             weathers = list(repository.get(data))
