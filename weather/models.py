@@ -22,4 +22,3 @@ class WeatherEntity:
             return object.__getattribute__(self, __name).strftime("%d/%m/%Y %H:%M:%S")
         else:
             return object.__getattribute__(self, __name)
-

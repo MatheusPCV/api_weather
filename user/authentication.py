@@ -8,9 +8,7 @@ def authenticate(username, password):
     # regra de autenticação (ignorada por enquanto)
     if username == 'user' and password == 'a1b2c3':
         # deveria retornar com os dados encontrados no banco
-        user = UserEntity(username=username, password=password)
-        print(user)
-        return user
+        return UserEntity(username=username)
     return None
 
 def generateToken(user):

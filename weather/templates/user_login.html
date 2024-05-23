@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block menu %}
+{% if not errorAuth %}
+<li class="nav-item"><a href="{% url 'Weather Insert' %}" class="nav-link">Insert</a></li>
+<li class="nav-item"><a href="{% url 'Weather Generate' %}" class="nav-link">Generate</a></li>
+<li class="nav-item"><a href="{% url 'Weather Reset' %}" class="nav-link">Reset</a></li>
+<li class="nav-item"><a href="{% url 'User Login' %}" class="nav-link">Login</a></li>
+{% else %}
+<li class="nav-item"><a href="#" class="nav-link">Logout</a></li>
+{% endif %}
+{% endblock %}
+
+{% block verse %}
+{{ verse }}
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between">
+    <h1>User Login</h1>
+</div>
+
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

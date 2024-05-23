@@ -1,3 +1,4 @@
+from django.db import models
 
 class UserEntity:
 
@@ -11,6 +12,6 @@ class UserEntity:
         self.email = email
         self.username = username
         self.password = password
-
-    def __str__(self) -> str:
-        return f'{self.username}: {self.password}'
+    
+    # def __str__(self) -> str:
+    #     return f'{self.username}: {user}'
